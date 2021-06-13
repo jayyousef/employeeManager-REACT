@@ -6,19 +6,30 @@ import API from "../utils/API";
 class SearchResultContainer extends Component {
   state = {
     search: "",
-    results: []
+    results: [],
+    isLoaded: false
   };
 
   // When this component mounts, search the Giphy API for pictures of kittens
   componentDidMount() {
-    this.searchGiphy("kittens");
+    this.getEmployees("");
   }
 
-  searchGiphy = query => {
-    API.search(query)
-      .then(res => this.setState({ results: res.data.data }))
-      .catch(err => console.log(err));
-  };
+  getEmployees = query => {
+    fetch('https://randomuser.me/api/')
+    .then(res => res.json())
+    .then(json=> {
+      console.log()
+      this.setState({
+        isLoaded: true,
+        results: json,
+      })
+      .catch(err => console.log(err))
+    }
+    // API.search(query)
+    //   .then(res => this.setState({ results: res.data.data }))
+    //   .catch(err => console.log(err));
+    )}
 
   handleInputChange = event => {
     const name = event.target.name;
@@ -31,7 +42,7 @@ class SearchResultContainer extends Component {
   // When the form is submitted, search the Giphy API for `this.state.search`
   handleFormSubmit = event => {
     event.preventDefault();
-    this.searchGiphy(this.state.search);
+    this.getEmployees(this.state.search);
   };
 
   render() {
