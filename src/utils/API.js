@@ -1,19 +1,10 @@
-import axios from "axios";
-
-const BASEURL = 'https://randomuser.me/api/';
-
-// $.ajax({
-//   url: 'https://randomuser.me/api/',
-//   dataType: 'json',
-//   success: function(data) {
-//     console.log(data);
-//   }
-// });
-      
-
-// Export an object with a "search" method that searches the Giphy API for the passed query
-export default {
-  search: function(query) {
-    return axios.get(BASEURL + query);
+export async function getData(data){
+  const options = {
+    method: 'Get',
+    // headers: ('content-type': 'application/json'),
+    // body: JSON.stringify({data})
   }
-};
+  const fetchURL = 'https://randomuser.me/api/?inc=name,email,phone,picture&results=10'
+  const response = await fetch(fetchURL, {options}).then(res=>res.json()).catch(err=>console.log('you had an error!>>>>',err))
+  return response
+}
