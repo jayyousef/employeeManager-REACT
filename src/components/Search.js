@@ -2,12 +2,13 @@ import React from "react";
 
 
 
-function Search () {
+function Search (props) {
 
-    const handleSearch = ()=>console.log('searchbutton')
+    const {handleSearch,searchString}=props
+
 
     return (
-        <div >
+        <div className="m-4 d-flex justify-content-center">
             <input onChange={handleSearch} type="text" placeholder="Search.."/>        
         </div>
     )

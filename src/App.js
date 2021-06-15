@@ -1,13 +1,10 @@
 import React from "react";
-import Header from "./components/Header";
-import Search from "./components/Search";
-import Table from "./components/Table";
+import Wrapper from "./components/Wrapper";
+
 
 function App() {
   return <div>
-    <Header />
-    <Search />
-    <Table />
+    <Wrapper />
     </div>;
 }
 
