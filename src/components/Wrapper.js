@@ -8,8 +8,6 @@ import Table from "./Table";
 
 function Wrapper() {
 
-  const [data, setData] = useState('')
-  const [message, setMessage] = useState('')
   const [employeeData, setEmployeeData] = useState([])
   const [sorted, setSorted] = useState([])
   const [filtered, setFiltered] = useState([])
@@ -28,17 +26,17 @@ function Wrapper() {
       setFiltered(filteredResults)
   }
 
-  useEffect(() => {
+    useEffect(() => {
     fetchData()
-}, [])
+    }, [])
 
-useEffect(() => {
+
+    useEffect(() => {
   handleFilter()
+  console.log(sorted)
 
-}, [handleFilter, searchString, sorted])
-
-
-//USE EFFECT whenever filter changes then sort also changes [sorted]
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [searchString, sorted])
 
 
 const fetchData=()=>{
@@ -63,12 +61,13 @@ const fetchData=()=>{
 
 const handleSearch=(event)=>{
   setsearchString(event.target.value)
-
 }
 
 
 const handleSort = (header)=>{
   console.log('sort with this header>>>',header)
+
+
   
   if(sorted){
       if(employeeData){
@@ -86,9 +85,9 @@ const handleSort = (header)=>{
           tempData
       )
   }
-  }
+  
 }
-
+}
 
 
 return <div>
