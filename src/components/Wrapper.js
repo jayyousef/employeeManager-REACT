@@ -7,42 +7,31 @@ import Search from "./Search";
 import Table from "./Table";
 
 function Wrapper() {
-
   const [employeeData, setEmployeeData] = useState([])
   const [sorted, setSorted] = useState([])
   const [filtered, setFiltered] = useState([])
   const [searchString, setsearchString] = useState('')
   const [isAscending, setIsAscending] = useState(false)
 
-
   const handleFilter = ()=>{
     //false is filtered out
       const filteredResults = sorted.filter(searched=>{
         const stringifiedItem=JSON.stringify(searched)
-        
         return stringifiedItem.includes(searchString)
-  
       })
       setFiltered(filteredResults)
   }
-
     useEffect(() => {
     fetchData()
     }, [])
 
-
     useEffect(() => {
   handleFilter()
-  console.log(sorted)
-
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [searchString, sorted])
-
+    }, [searchString, sorted, isAscending])
 
 const fetchData=()=>{
-
     const infoUrl = 'https://randomuser.me/api/?results=10&inc=name,email,phone,picture,dob&nat=us';
-
     fetch(infoUrl)
     .then(res => res.json())
     .then((res) => {
@@ -58,17 +47,11 @@ const fetchData=()=>{
       )
     });
 }
-
 const handleSearch=(event)=>{
   setsearchString(event.target.value)
 }
-
-
 const handleSort = (header)=>{
   console.log('sort with this header>>>',header)
-
-
-  
   if(sorted){
       if(employeeData){
       let tempData =  employeeData.sort(function(a, b) {
@@ -85,16 +68,12 @@ const handleSort = (header)=>{
           tempData
       )
   }
-  
 }
 }
-
-
 return <div>
     <Header />
     <Search searchString={searchString} handleSearch={handleSearch}/>
     <Table employeeData={filtered} handleSort={handleSort}/>
     </div>;
 }
-
 export default Wrapper;
