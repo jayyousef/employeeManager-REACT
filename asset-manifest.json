@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/employeeManager-REACT/static/css/main.16cb8f8d.chunk.css",
+    "main.js": "/employeeManager-REACT/static/js/main.9f549c67.chunk.js",
+    "main.js.map": "/employeeManager-REACT/static/js/main.9f549c67.chunk.js.map",
+    "runtime-main.js": "/employeeManager-REACT/static/js/runtime-main.f04d1774.js",
+    "runtime-main.js.map": "/employeeManager-REACT/static/js/runtime-main.f04d1774.js.map",
+    "static/css/2.61b4cb56.chunk.css": "/employeeManager-REACT/static/css/2.61b4cb56.chunk.css",
+    "static/js/2.287b0eb8.chunk.js": "/employeeManager-REACT/static/js/2.287b0eb8.chunk.js",
+    "static/js/2.287b0eb8.chunk.js.map": "/employeeManager-REACT/static/js/2.287b0eb8.chunk.js.map",
+    "index.html": "/employeeManager-REACT/index.html",
+    "static/css/2.61b4cb56.chunk.css.map": "/employeeManager-REACT/static/css/2.61b4cb56.chunk.css.map",
+    "static/css/main.16cb8f8d.chunk.css.map": "/employeeManager-REACT/static/css/main.16cb8f8d.chunk.css.map",
+    "static/js/2.287b0eb8.chunk.js.LICENSE.txt": "/employeeManager-REACT/static/js/2.287b0eb8.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f04d1774.js",
+    "static/css/2.61b4cb56.chunk.css",
+    "static/js/2.287b0eb8.chunk.js",
+    "static/css/main.16cb8f8d.chunk.css",
+    "static/js/main.9f549c67.chunk.js"
+  ]
+}
